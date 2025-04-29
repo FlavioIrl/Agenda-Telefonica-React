@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const FundoRegistro = styled.div`
+export const FundoHome = styled.div`
   width: 100vw;
   height: 100vh;
   background: linear-gradient(31deg,rgba(6, 1, 12) 20%, rgba(78, 16, 131, 1) 92%);;
@@ -10,7 +10,7 @@ export const FundoRegistro = styled.div`
   font-family: Poppins, sans-serif;
 `;
 
-export const TituloRegistro = styled.h1`
+export const TituloHome = styled.h1`
   font-size: 70px;
   margin: 0 auto;
   max-width: 1000px; 
@@ -18,7 +18,7 @@ export const TituloRegistro = styled.h1`
   font-weight: bold;
 `
 
-export const BotaoRegistro = styled.button`
+export const BotaoHome = styled.button`
   color: #fff;
   font-weight: bold;
   font-family: Poppins, sans-serif;
@@ -29,6 +29,11 @@ export const BotaoRegistro = styled.button`
   width: 400px;
   border-radius: 16px;
   margin: 130px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #6a1dd3;
+  }
 ` 
 
 export const Texto = styled.p`

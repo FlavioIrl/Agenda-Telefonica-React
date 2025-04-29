@@ -1,22 +1,28 @@
-import { FundoRegistro, TituloRegistro, BotaoRegistro, Texto, ImagemLink } from './styled';
+import {RegistroConteudo, Registro, RegistroInput, BotaoVoltar, BotaoSalvar, BotoesContainer} from './styles'
 
-const Registro = () => {
-  return (
-    <FundoRegistro>
-      <TituloRegistro>Bem-vindo à sua nova agenda corporativa!</TituloRegistro>
-      <BotaoRegistro>Registre-se</BotaoRegistro>
-      <Texto>
-        Organize seu trabalho com segurança e simplicidade. Estamos aqui para
-        facilitar a sua rotina!
-      </Texto>
-      <a>
-        <ImagemLink src="../../public/icons-github.png" alt="Descrição da imagem" />
-      </a>
-      <a>
-        <ImagemLink src="../../public/icons8-linkedin.png" alt="Descrição da imagem" />
-      </a>
-    </FundoRegistro>
-  );
-};
+const RegistroUser = () => {
+    return (
+        <Registro>
+            <RegistroConteudo>
+                <h2>Registro</h2>
+                <label>Nome:</label>
+                <RegistroInput type="text" placeholder="Digite o nome" />
 
-export default Registro;
+                <label>Email:</label>
+                <RegistroInput type="email" placeholder="Digite o email" />
+
+                <label>Telefone:</label>
+                <RegistroInput type="tel" placeholder="12 3 4567-7899" />
+
+                <label>Empresa:</label>
+                <RegistroInput type="text" placeholder="Digite o cargo ou a empresa" />
+                <BotoesContainer>
+                    <BotaoVoltar>Voltar</BotaoVoltar>
+                    <BotaoSalvar>Salvar</BotaoSalvar>
+                </BotoesContainer>
+            </RegistroConteudo>
+        </Registro>
+    )
+}
+
+export default RegistroUser
