@@ -1,9 +1,10 @@
-import { useState } from 'react';
 import Registro from './containers/Registro';
+import EstiloGlobal from './styles'
 
 function App() {
   return (
     <>
+      <EstiloGlobal />
       <Registro />
     </>
   );
