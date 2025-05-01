@@ -1,4 +1,4 @@
-import { FundoHome, TituloHome, BotaoHome, Texto, ImagemLink } from './styled'
+import { FundoHome, TituloHome, BotaoHome, Texto, ImagemLink } from './styles'
 
 const Home = () => {
   return (

@@ -8,6 +8,7 @@ const EstiloGlobal = createGlobalStyle`
     list-style: none;
   }
 `
+
 export const BotaoBase = styled.button`
   color: #fff;
   font-weight: bold;

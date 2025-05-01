@@ -1,13 +1,16 @@
 import styled from 'styled-components'
 import { BotaoBase, Texto } from '../../styles'
 
+export const ContainerPerfil =styled.div`
+  height: 100vh;
+`
+
 export const Aside = styled.aside`
   display: flex;
   flex-direction: column;
   background-color: #cacaca;
   width: 350px;
   height: 100vh;
-  position: fixed;
 `
 
 export const Titulo = styled.h1`

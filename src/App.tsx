@@ -1,11 +1,11 @@
 import EstiloGlobal from './styles'
-import { Perfil } from './containers/Perfil'
+import PaginaPrincipal from './containers/PaginaPrincipal'
 
 function App() {
   return (
     <>
       <EstiloGlobal />
-      <Perfil />
+      <PaginaPrincipal />
     </>
   )
 }
