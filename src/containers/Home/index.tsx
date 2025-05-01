@@ -1,4 +1,4 @@
-import { FundoHome, TituloHome, BotaoHome, Texto, ImagemLink } from './styled';
+import { FundoHome, TituloHome, BotaoHome, Texto, ImagemLink } from './styled'
 
 const Home = () => {
   return (
@@ -10,13 +10,19 @@ const Home = () => {
         facilitar a sua rotina!
       </Texto>
       <a>
-        <ImagemLink src="../../public/icons-github.png" alt="Descrição da imagem" />
+        <ImagemLink
+          src="../../public/icons-github.png"
+          alt="Descrição da imagem"
+        />
       </a>
       <a>
-        <ImagemLink src="../../public/icons8-linkedin.png" alt="Descrição da imagem" />
+        <ImagemLink
+          src="../../public/icons8-linkedin.png"
+          alt="Descrição da imagem"
+        />
       </a>
     </FundoHome>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

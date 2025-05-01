@@ -1,12 +1,12 @@
 import styled, { createGlobalStyle } from 'styled-components'
 
 const EstiloGlobal = createGlobalStyle`
-    * {
-        margin: 0;
-        pedding: 0;
-        box-sizing: border-box;
-        list-style: none;
-    }
+  * {
+    margin: 0;
+    pedding: 0;
+    box-sizing: border-box;
+    list-style: none;
+  }
 `
 export const BotaoBase = styled.button`
   color: #fff;
@@ -18,6 +18,17 @@ export const BotaoBase = styled.button`
   width: 200px;
   border-radius: 16px;
   cursor: pointer;
+`
+export const Container = styled.div`
+  display: grid;
+  grid-template-columns: 224px auto;
+`
+
+export const Texto = styled.h3`
+  font-size: 20px;
+  color: #434343;
+  font-family: Roboto, sans-serif;
+  font-weight: bold;
 `
 
 export default EstiloGlobal

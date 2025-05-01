@@ -1,0 +1,18 @@
+# Build output
+dist/
+build/
+
+# Node modules
+node_modules/
+
+# Logs
+*.log
+
+# Arquivos de configuração do ESLint (geralmente não precisa formatar)
+.eslintrc.js
+eslint.config.js
+
+# Arquivos de lock
+package-lock.json
+yarn.lock
+pnpm-lock.yaml

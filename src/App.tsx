@@ -1,14 +1,13 @@
-import Home from './containers/Home';
-import RegistroUser from './containers/Registro';
 import EstiloGlobal from './styles'
+import { Perfil } from './containers/Perfil'
 
 function App() {
   return (
     <>
       <EstiloGlobal />
-      <RegistroUser />
+      <Perfil />
     </>
-  );
+  )
 }
 
-export default App;
+export default App

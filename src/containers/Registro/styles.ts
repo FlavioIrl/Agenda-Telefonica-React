@@ -1,55 +1,54 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 import { BotaoBase } from '../../styles'
 
 export const Registro = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #1e1e1e;
-    font-family: Roboto, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #1e1e1e;
+  font-family: Roboto, sans-serif;
 `
 
 export const RegistroConteudo = styled.div`
-    background-color: #535353;
-    padding: 30px;
-    border-radius: 12px;
-    width: 100%;
-    color: #fff;
-    max-width: 600px;
-    border: 4px solid #777777;
+  background-color: #535353;
+  padding: 30px;
+  border-radius: 12px;
+  width: 100%;
+  color: #fff;
+  max-width: 600px;
+  border: 4px solid #777777;
 
-    label {
+  label {
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
     font-size: 20px;
-    }
+  }
 
-    h2{
-        font-size: 50px;
-        margin-bottom: 30px;
-        text-align: center;
-    }
+  h2 {
+    font-size: 50px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
 `
 
 export const RegistroInput = styled.input`
-    font-size: 16px;
-    width: 100%;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    padding: 8px;
-    background-color: #fff;
-    border-radius: 8px;
-    font-weight: bold;
-    color: #666666;
-    border-color: #666666;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  padding: 8px;
+  background-color: #fff;
+  border-radius: 8px;
+  font-weight: bold;
+  color: #666666;
+  border-color: #666666;
 
-    &:focus {
-        outline: none;
-        background-color: #d9d9d9;
-    }
-
+  &:focus {
+    outline: none;
+    background-color: #d9d9d9;
+  }
 `
 
 export const BotaoHome = styled.button`
@@ -59,7 +58,7 @@ export const BotaoHome = styled.button`
   padding: 5px 10px;
   border: none;
   font-size: 40px;
-  background-color: #4E10A3;
+  background-color: #4e10a3;
   width: 400px;
   border-radius: 16px;
   margin: 130px;
@@ -68,27 +67,27 @@ export const BotaoHome = styled.button`
   &:hover {
     background-color: #6a1dd3;
   }
-` 
+`
 
 export const BotoesContainer = styled.div`
-    display: flex;
-    justify-content: center;
-    gap: 20px; /* espaço entre os botões */
-    margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* espaço entre os botões */
+  margin-top: 40px;
 `
 
 export const BotaoVoltar = styled(BotaoBase)`
-    background-color: #f12b2b;
+  background-color: #f12b2b;
 
-    &:hover {
-        background-color: #f94a4a;
-      }
+  &:hover {
+    background-color: #f94a4a;
+  }
 `
 
 export const BotaoSalvar = styled(BotaoBase)`
-    background-color: #09e536;
+  background-color: #09e536;
 
-    &:hover {
-        background-color: #46f569;
-    }
+  &:hover {
+    background-color: #46f569;
+  }
 `
