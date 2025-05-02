@@ -2,14 +2,16 @@ import styled from 'styled-components'
 import { BotaoBase, Texto } from '../../styles'
 
 export const ContainerPerfil =styled.div`
+  position: sticky;
+  top: 0;
   height: 100vh;
+  background-color: #cacaca;
 `
 
 export const Aside = styled.aside`
   display: flex;
-  flex-direction: column;
-  background-color: #cacaca;
   width: 350px;
+  flex-direction: column;
   height: 100vh;
 `
 

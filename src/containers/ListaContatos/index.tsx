@@ -5,7 +5,14 @@ const ListaContatos = () => {
   return (
     <PaginaLista>
       <Titulo>Lista de contatos</Titulo>
-      <BotaoLista>+ adicionar contatos</BotaoLista>
+      <BotaoLista>+ adicionar contato</BotaoLista>
+      <Contato />
+      <Contato />
+      <Contato />
+      <Contato />
+      <Contato />
+      <Contato />
+      <Contato />
       <Contato />
     </PaginaLista>
   )

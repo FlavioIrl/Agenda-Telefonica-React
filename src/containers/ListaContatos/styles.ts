@@ -11,7 +11,9 @@ export const PaginaLista = styled.div`
 export const BotaoLista = styled(BotaoBase)`
     background-color: #61ABF0;
     border-radius: 10px;
-    margin: 20px 80% 0;
+    margin-bottom: 10px;
+    margin-top: 50px;
+    margin-left: 30px;
     padding: 10px 0;
 
     &:hover{

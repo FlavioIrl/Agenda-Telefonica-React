@@ -1,19 +1,21 @@
-import { Card, Titulo, Botoes, Info, Descricao, BarraAcoes, BotaoEditar, BotaoRemover, CardContainer } from './styles'
+import { Card, Titulo, Botoes, Info, Descricao, BarraAcoes, BotaoEditar, BotaoFavorito, EditandoFavorito, BotaoRemover, CardContainer } from './styles'
 
 const Contato = () => {
   return (
     <CardContainer>
         <Card>
             <BarraAcoes>
-                <Titulo>Nome: Flavio Irala Pereira</Titulo>
+                <Titulo>Flavio Irala Pereira</Titulo>
                 <Botoes>
+                    <BotaoFavorito><img src="../../public/icons8-estrela.png" /></BotaoFavorito>
+                    {/* <EditandoFavorito><p>Favoritar: </p><input type="checkbox" /></EditandoFavorito> */}
                     <BotaoEditar><img src="../../public/icons8-edit.png" /></BotaoEditar>
                     <BotaoRemover><img src="../../public/icons8-lixeira.png" /></BotaoRemover>
                 </Botoes>
             </BarraAcoes>
             <Info>
                 <p>Email: flavio@gmail.com</p>
-                <p>telefone: 37 9 9999-9999</p>
+                <p>Telefone: 37 9 9999-9999</p>
                 <p>Empresa: Eletrônica Paraná</p>
             </Info>
             <Descricao>

@@ -6,10 +6,44 @@ max-width: 90%;
 font-family: Roboto, sans-serif;
 `
 
+export const BotaoFavorito = styled.div`
+background-color: #dcdcdc;
+color: white;
+width: 40px;
+height: 40px;
+margin-right: 10px;
+padding: 6px;
+border-radius: 16px;
+
+img {    
+  width: 94%;
+}
+`
+
+export const EditandoFavorito = styled.div`
+  background-color: #56616b;
+  border-radius: 10px;
+  display: flex;    
+  align-items: center;
+  padding: 8px;
+  color: #fff;
+  cursor: pointer;
+
+  p{
+    font-weight: bold;
+    font-size: 20px;
+    margin-right: 8px;
+  }
+  input {
+    width: 15px;
+    height: 15px;
+    background-color: #56616b;
+  }
+`
 
 export const Card = styled.div`
 background-color: #cacaca;
-padding: 8px;
+padding: 12px;
 margin-left: 30px; 
 border-radius: 12px;
 `
@@ -29,17 +63,22 @@ p {
 margin-right: 80px;
 font-size: 14px;
 color: #555;
+font-weight: bold;
 }
 
 `
 
 
 export const Descricao = styled.p`
-margin-top: 12px;
-font-size: 13px;
-color: #888;
-font-style: italic;
-
+  margin-top: 12px;
+  font-size: 13px;
+  color: #c9c9c9;
+  font-style: Roboto, sans-serif;
+  font-weight: bold;
+  background-color: #56616b;
+  padding: 10px;
+  border-radius: 10px;
+  padding-bottom: 20px;
 `
 
 
@@ -57,17 +96,17 @@ export const BarraAcoes = styled.div`
 `
 
 export const BotaoEditar = styled(BotaoBase)`
-background-color: #527AD0;
+background-color: #4ca5f8;
 color: white;
 width: 40px;
 height: 40px;
 margin-right: 10px;
 
 img {    
-  width: 100%;
+  width: 94%;
 }
 &:hover {
-  background-color: #2d2d2d;
+  background-color: #3998f1;
 }
 
 `
@@ -85,7 +124,7 @@ img {
 }
 
 &:hover {
-  background-color: #c9302c;
+  background-color: #e64343;
 }
 
 
