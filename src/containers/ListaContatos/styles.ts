@@ -12,7 +12,7 @@ export const BotaoLista = styled(BotaoBase)`
     background-color: #61ABF0;
     border-radius: 10px;
     margin-bottom: 10px;
-    margin-top: 50px;
+    margin-top: 30px;
     margin-left: 30px;
     padding: 10px 0;
 
@@ -24,6 +24,6 @@ export const BotaoLista = styled(BotaoBase)`
 export const Titulo = styled.h1`
     font-size: 50px;
     text-align: center;
-    margin-top:  68px;
+    margin-top:  40px;
     font-family: Poppins, sans-serif;
 `

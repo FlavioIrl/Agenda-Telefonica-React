@@ -1,4 +1,4 @@
-import { Layout } from "./styles"
+import { Layout, ListaContatosWrapper } from "./styles"
 
 import { Perfil } from "../Perfil"
 import ListaContatos from "../ListaContatos"
@@ -7,7 +7,9 @@ const PaginaPrincipal = () => {
     return(
         <Layout>
             <Perfil />
-            <ListaContatos />
+            <ListaContatosWrapper>
+                <ListaContatos />
+            </ListaContatosWrapper>
         </Layout>
     )
 }

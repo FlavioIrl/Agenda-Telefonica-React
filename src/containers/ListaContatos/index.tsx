@@ -11,9 +11,6 @@ const ListaContatos = () => {
       <Contato />
       <Contato />
       <Contato />
-      <Contato />
-      <Contato />
-      <Contato />
     </PaginaLista>
   )
 }

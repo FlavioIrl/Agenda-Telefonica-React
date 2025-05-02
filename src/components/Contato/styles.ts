@@ -4,6 +4,7 @@ import { BotaoBase } from '../../styles'
 export const CardContainer = styled.div`
 max-width: 90%;
 font-family: Roboto, sans-serif;
+
 `
 
 export const BotaoFavorito = styled.div`
@@ -46,6 +47,7 @@ background-color: #cacaca;
 padding: 12px;
 margin-left: 30px; 
 border-radius: 12px;
+margin-Bottom: 20px; 
 `
 
 export const Titulo = styled.h2`
@@ -126,7 +128,5 @@ img {
 &:hover {
   background-color: #e64343;
 }
-
-
 
 `
