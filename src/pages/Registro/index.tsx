@@ -27,8 +27,8 @@ const RegistroUser = () => {
         <label>Cargo: (opcional)</label>
         <RegistroInput type="text" placeholder="Digite o cargo" />
         <BotoesContainer>
-          <BotaoVoltar>Voltar</BotaoVoltar>
-          <BotaoSalvar>Salvar</BotaoSalvar>
+          <BotaoVoltar to="/">Voltar</BotaoVoltar>
+          <BotaoSalvar to="/paginaPrincipal">Salvar</BotaoSalvar>
         </BotoesContainer>
       </RegistroConteudo>
     </Registro>

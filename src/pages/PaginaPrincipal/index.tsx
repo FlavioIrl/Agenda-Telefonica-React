@@ -1,7 +1,7 @@
 import { Layout, ListaContatosWrapper } from "./styles"
 
-import { Perfil } from "../Perfil"
-import ListaContatos from "../ListaContatos"
+import { Perfil } from "../../containers/Perfil"
+import ListaContatos from "../../containers/ListaContatos"
 
 const PaginaPrincipal = () => {
     return(

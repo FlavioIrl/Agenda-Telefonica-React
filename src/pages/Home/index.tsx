@@ -4,7 +4,7 @@ const Home = () => {
   return (
     <FundoHome>
       <TituloHome>Bem-vindo à sua nova agenda corporativa!</TituloHome>
-      <BotaoHome>Registre-se</BotaoHome>
+      <BotaoHome to="/registro">Registre-se</BotaoHome>
       <Texto>
         Organize seu trabalho com segurança e simplicidade. Estamos aqui para
         facilitar a sua rotina!

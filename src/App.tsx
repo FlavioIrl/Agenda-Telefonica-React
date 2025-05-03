@@ -1,9 +1,9 @@
 import EstiloGlobal from './styles'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
-import Home from './containers/Home'
-import Registro from './containers/Registro'           
-import PaginaPrincipal from './containers/PaginaPrincipal'
+import Home from './pages/Home'
+import Registro from './pages/Registro'           
+import PaginaPrincipal from './pages/PaginaPrincipal'
 
 const rotas = createBrowserRouter([
   { path: '/', element: <Home /> },

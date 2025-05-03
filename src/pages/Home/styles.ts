@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 export const FundoHome = styled.div`
@@ -20,19 +21,18 @@ export const TituloHome = styled.h1`
   max-width: 1000px;
   padding-top: 130px;
   font-weight: bold;
+  margin-bottom: 120px;
 `
 
-export const BotaoHome = styled.button`
+export const BotaoHome = styled(Link)`
   color: #fff;
   font-weight: bold;
   font-family: Poppins, sans-serif;
-  padding: 5px 10px;
-  border: none;
+  padding: 13px 25px;
   font-size: 40px;
+  text-decoration: none;
   background-color: #4e10a3;
-  width: 400px;
   border-radius: 16px;
-  margin: 130px;
   cursor: pointer;
 
   &:hover {
@@ -46,6 +46,7 @@ export const Texto = styled.p`
   margin: 0 auto;
   max-width: 600px;
   margin-bottom: 80px;
+  margin-top: 140px;
 `
 
 export const ImagemLink = styled.img`
