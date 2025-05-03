@@ -84,7 +84,7 @@ export const BotaoVoltar = styled(BotaoBase)`
   }
 `
 
-export const BotaoSalvar = styled(BotaoLink)`
+export const BotaoSalvar = styled(BotaoBase)`
   background-color: #09e536;
   padding: 8px 72px;
 
