@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { BotaoBase } from '../../styles'
+import { BotaoBase, BotaoLink } from '../../styles'
 
 export const Registro = styled.div`
   display: flex;
@@ -84,8 +84,9 @@ export const BotaoVoltar = styled(BotaoBase)`
   }
 `
 
-export const BotaoSalvar = styled(BotaoBase)`
+export const BotaoSalvar = styled(BotaoLink)`
   background-color: #09e536;
+  padding: 8px 72px;
 
   &:hover {
     background-color: #46f569;

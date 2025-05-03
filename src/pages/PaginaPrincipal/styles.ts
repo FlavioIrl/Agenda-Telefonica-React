@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 export const Layout = styled.main`
   display: flex;
@@ -9,5 +9,5 @@ export const Layout = styled.main`
 
 export const ListaContatosWrapper = styled.div`
   flex: 1;
-  overflow-y: auto;  
-`;
+  overflow-y: auto;
+`

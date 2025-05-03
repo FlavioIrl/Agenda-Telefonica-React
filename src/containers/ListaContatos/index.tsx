@@ -5,7 +5,7 @@ const ListaContatos = () => {
   return (
     <PaginaLista>
       <Titulo>Lista de contatos</Titulo>
-      <BotaoLista>+ adicionar contato</BotaoLista>
+      <BotaoLista to="/registro">+ adicionar contato</BotaoLista>
       <Contato />
       <Contato />
       <Contato />

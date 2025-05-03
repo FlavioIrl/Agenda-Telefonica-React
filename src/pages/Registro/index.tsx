@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'
 import {
   RegistroConteudo,
   Registro,
@@ -8,6 +9,12 @@ import {
 } from './styles'
 
 const RegistroUser = () => {
+  const navigate = useNavigate()
+
+  const handleVoltar = () => {
+    navigate(-1) // Volta uma página no histórico
+  }
+
   return (
     <Registro>
       <RegistroConteudo>
@@ -21,13 +28,13 @@ const RegistroUser = () => {
         <label>Telefone:</label>
         <RegistroInput type="tel" placeholder="12 3 4567-7899" />
 
-        <label>Empresa: (opcional)</label>
-        <RegistroInput type="text" placeholder="Digite a empresa" />
+        <label>Login GitHub: (opcional)</label>
+        <RegistroInput type="text" placeholder="Login a cadastrar" />
 
-        <label>Cargo: (opcional)</label>
-        <RegistroInput type="text" placeholder="Digite o cargo" />
+        <label>Descrição: (opcional)</label>
+        <RegistroInput type="text" placeholder="Programador Full Stack" />
         <BotoesContainer>
-          <BotaoVoltar to="/">Voltar</BotaoVoltar>
+          <BotaoVoltar onClick={handleVoltar}>Voltar</BotaoVoltar>
           <BotaoSalvar to="/paginaPrincipal">Salvar</BotaoSalvar>
         </BotoesContainer>
       </RegistroConteudo>
