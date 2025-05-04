@@ -32,7 +32,7 @@ const RegistroUser = () => {
 
       })
     )
-    navigate('/')
+    navigate('/paginaPrincipal')
   }
 
   return (

@@ -1,23 +1,40 @@
+import { useDispatch, useSelector } from 'react-redux'
 import { useState } from 'react'
+import type { RootState } from '../../store'
 import * as S from './styles'
+import { cadastrar } from '../../store/reducers/registros'
+
 
 export const Perfil = () => {
+  const dispatch = useDispatch()
+
+  const registros = useSelector((state: RootState) => state.registros)
+  const perfilSalvo = registros[registros.length - 1]
+
   const [editando, setEditando] = useState(false)
-  const [login, setLogin] = useState('FlavioIrl')
-  const [descricao, setDescricao] = useState(
-    'Um programador muito organizado e competente.'
-  )
-  const [email, setEmail] = useState('Flavio3230@gmail.com')
-  const [nome, setNome] = useState('Flavio Irala Pereira')
-  const [telefone, setTelefone] = useState('67 9 1234-6789')
+  const [login, setLogin] = useState(perfilSalvo?.login || '')
+  const [descricao, setDescricao] = useState(perfilSalvo?.descricao || '')
+  const [email, setEmail] = useState(perfilSalvo?.email || '')
+  const [nome, setNome] = useState(perfilSalvo?.nome || '')
+  const [telefone, setTelefone] = useState(perfilSalvo?.telefone || '')
+  
 
-  // const handleEditar = () => {
-  //   setEditando(true);
-  // }
-
-  // const handleSalvar = () => {
-  //   setEditando(false);
-  // }
+  if (!perfilSalvo) return <p>Nenhum perfil registrado ainda.</p>
+  
+  const handleSalvar = () => {
+    if(editando){
+      dispatch(
+        cadastrar({
+          nome,
+          email,
+          telefone,
+          login,
+          descricao
+        })
+      )
+    } 
+    setEditando(!editando)
+  }
 
   return (
     <S.ContainerPerfil>
@@ -54,7 +71,7 @@ export const Perfil = () => {
             onChange={(e) => setDescricao(e.target.value)}
           />
         </S.TextoDiv>
-        <S.BotaoPerfil onClick={() => setEditando(!editando)}>
+        <S.BotaoPerfil onClick={handleSalvar}>
           {editando ? 'Salvar' : 'Editar Perfil'}
         </S.BotaoPerfil>
       </S.Aside>
