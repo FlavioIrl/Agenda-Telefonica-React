@@ -9,14 +9,21 @@ export const Perfil = () => {
   const dispatch = useDispatch()
 
   const registros = useSelector((state: RootState) => state.registros)
-  const perfilSalvo = registros[registros.length - 1]
+  const perfilSalvo = registros[registros.length - 1] || {
+    login: '',
+    descricao: '',
+    email: '',
+    nome: '',
+    telefone: ''
+  }
 
   const [editando, setEditando] = useState(false)
-  const [login, setLogin] = useState(perfilSalvo?.login || '')
-  const [descricao, setDescricao] = useState(perfilSalvo?.descricao || '')
-  const [email, setEmail] = useState(perfilSalvo?.email || '')
-  const [nome, setNome] = useState(perfilSalvo?.nome || '')
-  const [telefone, setTelefone] = useState(perfilSalvo?.telefone || '')
+  const [login, setLogin] = useState(perfilSalvo.login)
+  const [descricao, setDescricao] = useState(perfilSalvo.descricao)
+  const [email, setEmail] = useState(perfilSalvo.email)
+  const [nome, setNome] = useState(perfilSalvo.nome)
+  const [telefone, setTelefone] = useState(perfilSalvo.telefone)
+
   
 
   if (!perfilSalvo) return <p>Nenhum perfil registrado ainda.</p>
