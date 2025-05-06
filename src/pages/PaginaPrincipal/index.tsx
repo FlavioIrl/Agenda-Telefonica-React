@@ -6,7 +6,7 @@ import ListaContatos from '../../containers/ListaContatos'
 const PaginaPrincipal = () => {
   return (
     <Layout>
-        <Perfil />
+      <Perfil />
       <ListaContatosWrapper>
         <ListaContatos />
       </ListaContatosWrapper>

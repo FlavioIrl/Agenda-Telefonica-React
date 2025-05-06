@@ -1,15 +1,16 @@
 import { configureStore } from '@reduxjs/toolkit'
 import registrosReducer from './reducers/registros'
-import perfilReducer from './reducers/salvarPefil'
+import filtroReducer from './reducers/filtro'
 
 const store = configureStore({
   reducer: {
     registros: registrosReducer,
-    perfil: perfilReducer,
+    filtro: filtroReducer
   }
 })
 
 export type RootState = ReturnType<typeof store.getState>
+export type RootReducer = ReturnType<typeof store.getState>
 export type AppDispatch = typeof store.dispatch
 
 export default store

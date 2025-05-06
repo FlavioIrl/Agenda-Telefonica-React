@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useState, useEffect } from 'react'
 import type { RootState } from '../../store'
 import * as S from './styles'
-import { editarPerfil } from '../../store/reducers/registros'
+import { editar } from '../../store/reducers/registros'
 
 export const Perfil = () => {
   const dispatch = useDispatch()
@@ -10,7 +10,6 @@ export const Perfil = () => {
   const registro = useSelector((state: RootState) =>
     state.registros.itens.find((r) => r.id === 2)
   )
-
 
   const [editando, setEditando] = useState(false)
 
@@ -33,8 +32,8 @@ export const Perfil = () => {
   const handleSalvar = () => {
     if (editando && registro) {
       dispatch(
-        editarPerfil({
-          id: 1,
+        editar({
+          id: 2,
           nome,
           email,
           telefone,

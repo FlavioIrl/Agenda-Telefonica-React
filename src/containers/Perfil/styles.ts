@@ -32,12 +32,12 @@ export const Aside = styled.aside`
 `
 
 export const Titulo = styled.h1`
-  font-size: clamp(24px, 5vw, 40px); 
+  font-size: clamp(24px, 5vw, 40px);
   margin: 10px auto 30px;
   font-family: Poppins, sans-serif;
 
   @media (max-width: 768px) {
-    font-size: 30px; 
+    font-size: 30px;
   }
 `
 
@@ -50,9 +50,8 @@ export const BotaoPerfil = styled(BotaoBase)`
 
   &:hover {
     background-color: rgb(78, 77, 77);
-  }f
-
-  @media (max-width: 768px) {
+  }
+  f @media (max-width: 768px) {
     width: 80%;
   }
 `
@@ -78,14 +77,14 @@ export const TextoPerfil = styled.textarea`
   overflow: hidden;
 
   @media (max-width: 768px) {
-    font-size: 16px; 
+    font-size: 16px;
   }
 `
 
 export const Email = styled.textarea`
   margin: 0 auto;
   margin-bottom: 60px;
-  font-size: clamp(12px, 3vw, 15px); 
+  font-size: clamp(12px, 3vw, 15px);
   text-align: center;
   font-family: Roboto, sans-serif;
   font-weight: bold;
@@ -99,7 +98,7 @@ export const Email = styled.textarea`
 `
 
 export const Nome = styled.textarea`
-  font-size: clamp(24px, 4vw, 30px); 
+  font-size: clamp(24px, 4vw, 30px);
   color: #1d1d1d;
   text-align: center;
   font-family: Roboto, sans-serif;

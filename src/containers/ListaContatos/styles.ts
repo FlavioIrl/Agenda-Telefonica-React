@@ -7,6 +7,15 @@ export const PaginaLista = styled.div`
   flex-direction: column;
   gap: 16px;
 `
+export const Campo = styled.input`
+  padding: 8px;
+  background-color: #fff;
+  border-radius: 8px;
+  font-weight: bold;
+  color: #666666;
+  border-color: #666666;
+  width: 100%;
+`
 
 export const BotaoLista = styled(BotaoLink)`
   background-color: #61abf0;

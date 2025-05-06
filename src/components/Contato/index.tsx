@@ -1,10 +1,14 @@
+import { useDispatch } from 'react-redux'
 import * as S from './styles'
 import RegistroClass from '../../models/Registro'
 import { Descricao } from '../../styles'
 
+import { remover } from '../../store/reducers/registros'
+
 type Props = RegistroClass
 
-const Contato = ({ login, descricao, email, nome, telefone}: Props) => {
+const Contato = ({ id, login, descricao, email, nome, telefone }: Props) => {
+  const dispatch = useDispatch()
 
   return (
     <S.CardContainer>
@@ -15,11 +19,14 @@ const Contato = ({ login, descricao, email, nome, telefone}: Props) => {
             <S.BotaoFavorito>
               <img src="/icons8-estrela.png" />
             </S.BotaoFavorito>
-             <S.EditandoFavorito><p>Favoritar: </p><input type="checkbox" /></S.EditandoFavorito> 
+            <S.EditandoFavorito>
+              <p>Favoritar: </p>
+              <input type="checkbox" />
+            </S.EditandoFavorito>
             <S.BotaoEditar>
               <img src="/icons8-edit.png" />
             </S.BotaoEditar>
-            <S.BotaoRemover>
+            <S.BotaoRemover onClick={() => dispatch(remover(id))}>
               <img src="/icons8-lixeira.png" />
             </S.BotaoRemover>
           </S.Botoes>
