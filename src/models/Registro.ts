@@ -2,8 +2,8 @@ class Registro {
   nome: string
   email: string
   telefone: string
-  login?: string
-  descricao?: string
+  login: string
+  descricao: string
   id: number
 
   constructor(
@@ -11,8 +11,8 @@ class Registro {
     email: string,
     telefone: string,
     id: number,
-    login?: string,
-    descricao?: string
+    login: string,
+    descricao: string
   ) {
     this.nome = nome
     this.email = email

@@ -1,30 +1,48 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import type { RootState } from '../../store'
 import * as S from './styles'
-import { cadastrar } from '../../store/reducers/registros'
-import RegistroClass from '../../models/Registro'
+import { editarPerfil } from '../../store/reducers/registros'
 
-type Props = RegistroClass
-
-export const Perfil = (login, descricao, email, nome, telefone) => {
+export const Perfil = () => {
   const dispatch = useDispatch()
 
-  const registros = useSelector((state: RootState) => state.registros)
+  const registro = useSelector((state: RootState) =>
+    state.registros.itens.find((r) => r.id === 2)
+  )
+
 
   const [editando, setEditando] = useState(false)
 
-  if (!perfilSalvo) return <p>Nenhum perfil registrado ainda.</p>
-  
-  const handleSalvar = () => {
-    if(editando){
-      dispatch(
-        cadastrar({
-          email:String,
+  const [login, setLogin] = useState('')
+  const [descricao, setDescricao] = useState('')
+  const [email, setEmail] = useState('')
+  const [nome, setNome] = useState('')
+  const [telefone, setTelefone] = useState('')
 
+  useEffect(() => {
+    if (registro) {
+      setLogin(registro.login)
+      setDescricao(registro.descricao)
+      setEmail(registro.email)
+      setNome(registro.nome)
+      setTelefone(registro.telefone)
+    }
+  }, [registro])
+
+  const handleSalvar = () => {
+    if (editando && registro) {
+      dispatch(
+        editarPerfil({
+          id: 1,
+          nome,
+          email,
+          telefone,
+          login,
+          descricao
         })
       )
-    } 
+    }
     setEditando(!editando)
   }
 

@@ -13,14 +13,14 @@ const Contato = ({ login, descricao, email, nome, telefone}: Props) => {
           <S.Titulo>{nome}</S.Titulo>
           <S.Botoes>
             <S.BotaoFavorito>
-              <img src="../../public/icons8-estrela.png" />
+              <img src="/icons8-estrela.png" />
             </S.BotaoFavorito>
              <S.EditandoFavorito><p>Favoritar: </p><input type="checkbox" /></S.EditandoFavorito> 
             <S.BotaoEditar>
-              <img src="../../public/icons8-edit.png" />
+              <img src="/icons8-edit.png" />
             </S.BotaoEditar>
             <S.BotaoRemover>
-              <img src="../../public/icons8-lixeira.png" />
+              <img src="/icons8-lixeira.png" />
             </S.BotaoRemover>
           </S.Botoes>
         </S.BarraAcoes>
