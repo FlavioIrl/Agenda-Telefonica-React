@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 import registrosReducer from './reducers/registros'
+import perfilReducer from './reducers/salvarPefil'
 
 const store = configureStore({
   reducer: {
-    registros: registrosReducer
+    registros: registrosReducer,
+    perfil: perfilReducer,
   }
 })
 

@@ -1,13 +1,16 @@
 import * as S from './styles'
-
+import RegistroClass from '../../models/Registro'
 import { Descricao } from '../../styles'
 
-const Contato = () => {
+type Props = RegistroClass
+
+const Contato = ({ login, descricao, email, nome, telefone}: Props) => {
+
   return (
     <S.CardContainer>
       <S.Card>
         <S.BarraAcoes>
-          <S.Titulo>Flavio Irala Pereira</S.Titulo>
+          <S.Titulo>{nome}</S.Titulo>
           <S.Botoes>
             <S.BotaoFavorito>
               <img src="../../public/icons8-estrela.png" />
@@ -22,11 +25,11 @@ const Contato = () => {
           </S.Botoes>
         </S.BarraAcoes>
         <S.Info>
-          <p>Email: flavio@gmail.com</p>
-          <p>Telefone: 37 9 9999-9999</p>
-          <p>Login Github: FlavioIRl</p>
+          <p>{email}</p>
+          <p>{telefone}</p>
+          <p>{login}</p>
         </S.Info>
-        <Descricao>Um programador muito organizado e competente.</Descricao>
+        <Descricao>{descricao}</Descricao>
       </S.Card>
     </S.CardContainer>
   )
