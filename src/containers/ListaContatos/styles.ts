@@ -14,7 +14,8 @@ export const Campo = styled.input`
   font-weight: bold;
   color: #666666;
   border-color: #666666;
-  width: 100%;
+  margin-left: 30px;
+  width: 88%;
 `
 
 export const BotaoLista = styled(BotaoLink)`

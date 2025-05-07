@@ -9,9 +9,12 @@ const ListaContatos = () => {
   const dispatch = useDispatch()
   const { termo } = useSelector((state: RootState) => state.filtro)
 
+  const contemTermo = (texto: string, termo: string | undefined) =>
+    texto.toLowerCase().includes((termo || '').toLowerCase())
+
   const registrosFiltrados = registros
     .filter((r) => r.id !== 2)
-    .filter((r) => r.nome.toLowerCase().includes(termo.toLowerCase()))
+    .filter((r) => contemTermo(r.nome, termo))
 
   return (
     <PaginaLista>
