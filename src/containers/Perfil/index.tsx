@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import type { RootState } from '../../store'
 import * as S from './styles'
 import { editar } from '../../store/reducers/registros'
+import { Descricao } from '../../styles'
 
 export const Perfil = () => {
   const dispatch = useDispatch()
@@ -74,7 +75,7 @@ export const Perfil = () => {
             value={telefone}
             onChange={(e) => setTelefone(e.target.value)}
           />
-          <S.DescricaoPerfil
+          <Descricao
             disabled={!editando}
             value={descricao}
             onChange={(e) => setDescricao(e.target.value)}

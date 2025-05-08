@@ -22,16 +22,22 @@ export const BotaoBase = styled.button`
   cursor: pointer;
 `
 
-export const Descricao = styled.input`
-  margin-top: 12px;
-  font-size: 15px;
+export const Descricao = styled.textarea`
+  padding: 10px;
   color: #c9c9c9;
+  font-size: clamp(14px, 3vw, 15px);
   font-family: Roboto, sans-serif;
   font-weight: bold;
+  max-height: 150px;
+  height: 100px;
+  width: 100%;
+  line-height: 24px;
+  resize: none;
+  border: none;
   background-color: #56616b;
-  padding: 10px;
+  margin-top: 30px;
   border-radius: 10px;
-  padding-bottom: 20px;
+  overflow: hidden;
 `
 
 export const BotaoLink = styled(Link)`

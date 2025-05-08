@@ -69,7 +69,6 @@ export const TextoPerfil = styled.textarea`
   margin-left: 5px;
   font-weight: bold;
   width: 100%;
-  line-height: 13px;
   resize: none;
   border: none;
   background-color: transparent;
@@ -110,23 +109,5 @@ export const Nome = styled.textarea`
   border: none;
   background-color: transparent;
   resize: none;
-  overflow: hidden;
-`
-
-export const DescricaoPerfil = styled.textarea`
-  padding: 10px;
-  color: #c9c9c9;
-  font-size: clamp(14px, 3vw, 15px);
-  font-family: Roboto, sans-serif;
-  font-weight: bold;
-  max-height: 150px;
-  height: 100px;
-  width: 100%;
-  line-height: 24px;
-  resize: none;
-  border: none;
-  background-color: #56616b;
-  margin-top: 30px;
-  border-radius: 10px;
   overflow: hidden;
 `

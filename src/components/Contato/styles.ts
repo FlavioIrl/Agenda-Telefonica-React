@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { BotaoBase } from '../../styles'
+
 export const CardContainer = styled.div`
   max-width: 90%;
   font-family: Roboto, sans-serif;
@@ -7,6 +8,7 @@ export const CardContainer = styled.div`
 
 export const BotaoFavorito = styled.div`
   background-color: #dcdcdc;
+  margin-bottom: 5px;
   color: white;
   width: 40px;
   height: 40px;
@@ -26,7 +28,8 @@ export const EditandoFavorito = styled.div`
   padding: 8px;
   color: #fff;
   cursor: pointer;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+  
 
   p {
     font-weight: bold;
@@ -49,23 +52,36 @@ export const Card = styled.div`
   margin-bottom: 20px;
 `
 
-export const Titulo = styled.h2`
-  font-size: 20px;
+export const Titulo = styled.textarea`
+  font-size: 26px;
   font-weight: bold;
   margin-bottom: 8px;
   color: #333;
+  height: 32px;
+  resize: none;
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
 `
 
 export const TextoContato = styled.textarea`
-  font-size: clamp(18px, 4vw, 16px);
+  font-size: clamp(13px, 4vw, 16px);
   font-family: Roboto, sans-serif;
+  margin-right: 10px;
   font-weight: bold;
+  line-height: 13px;
+  width: 20%;
+  height: 20px;
   resize: none;
   border: none;
   background-color: transparent;
   color: #555;
   overflow: hidden;
-  margin-right: 10px;
 
   @media (max-width: 768px) {
     font-size: 16px;
