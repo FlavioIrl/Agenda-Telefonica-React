@@ -9,104 +9,111 @@ import { remover, editar } from '../../store/reducers/registros'
 
 type Props = RegistroClass
 
-const Contato = ({ id }: Props) => {
+const Contato = ({ id, login, descricao: descricaoOriginal, email, nome, telefone }: Props) => {
   const dispatch = useDispatch()
 
   const registro = useSelector((state: RootState) =>
-    state.registros.itens.find((r) => r.id === 2)
-  )
-  const [editando, setEditando] = useState(false)
+    state.registro?.itens?.find((r) => r.id === id))
 
-  const [login, setLogin] = useState('')
+  const [estaEditando, setEstaEditando] = useState(false)
   const [descricao, setDescricao] = useState('')
-  const [email, setEmail] = useState('')
-  const [nome, setNome] = useState('')
-  const [telefone, setTelefone] = useState('')
+  const [loginEdit, setLogin] = useState(login)
+  const [emailEdit, setEmail] = useState(email)
+  const [telefoneEdit, setTelefone] = useState(telefone)
 
   useEffect(() => {
-    if (registro) {
-      setLogin(registro.login)
-      setDescricao(registro.descricao)
-      setEmail(registro.email)
-      setNome(registro.nome)
-      setTelefone(registro.telefone)
+    if (descricaoOriginal && descricaoOriginal.length > 0) {
+      setDescricao(descricaoOriginal)
     }
-  }, [registro])
+  }, [descricaoOriginal])
 
-  const handleSalvar = () => {
-    if (editando && registro) {
-      dispatch(
-        editar({
-          id: 2,
-          nome,
-          email,
-          telefone,
-          login,
-          descricao
-        })
-      )
-    }
-    setEditando(!editando)
+  function cancelarEdicao() {
+    setEstaEditando(false)
+    setDescricao(descricaoOriginal)
   }
 
   return (
     <S.CardContainer>
       <S.Card>
         <S.BarraAcoes>
-          <S.Titulo
-            disabled={!editando}
-            value={nome}
-            onChange={(e) => setNome(e.target.value)}
-          >
+          <S.Titulo>
+            {estaEditando && <em>Editando: </em>}
             {nome}
           </S.Titulo>
           <S.Botoes>
-            <S.BotaoFavorito>
-              <img src="/icons8-estrela.png" />
-            </S.BotaoFavorito>
-            <S.EditandoFavorito>
-              <p>Favoritar: </p>
-              <input type="checkbox" />
-            </S.EditandoFavorito>
-            <S.BotaoEditar>
-              <img src="/icons8-edit.png" />
-            </S.BotaoEditar>
-            <S.BotaoRemover onClick={() => dispatch(remover(id))}>
-              <img src="/icons8-lixeira.png" />
-            </S.BotaoRemover>
+            {estaEditando ? (
+              <>
+                <S.EditandoFavorito>
+                  <p>Favoritar: </p>
+                  <input type="checkbox" />
+                </S.EditandoFavorito>
+                <S.BotaoSalvar
+                  onClick={() => {
+                    dispatch(
+                      editar({
+                        id,
+                        login: loginEdit,
+                        descricao,
+                        email: emailEdit,
+                        nome,
+                        telefone: telefoneEdit,
+                      })
+                    )
+                    setEstaEditando(false)
+                  }}
+                >
+                  Salvar
+                </S.BotaoSalvar>
+
+                <S.BotaoCancelar onClick={cancelarEdicao}>
+                  Cancelar
+                </S.BotaoCancelar>
+              </>
+            ) : (
+              <>
+                <S.BotaoEditarContainer>
+                  <S.BotaoFavorito>
+                    <img src="/icons8-estrela.png" />
+                  </S.BotaoFavorito>
+                  <S.BotaoEditar
+                    onClick={() => setEstaEditando(true)}
+                  >
+                    <img src="/icons8-edit.png" />
+                  </S.BotaoEditar>
+
+                  <S.BotaoRemover onClick={() => dispatch(remover(id))}>
+                    <img src="/icons8-lixeira.png" />
+                  </S.BotaoRemover>
+                </S.BotaoEditarContainer>
+              </>
+            )}
           </S.Botoes>
         </S.BarraAcoes>
         <S.Info>
-          <p
-            disabled={!editando}
-            value={login}
+          <S.TextoContato
+            disabled={!estaEditando}
+            value={loginEdit}
             onChange={(e) => setLogin(e.target.value)}
-          >
-            {login}
-          </p>
-          <p
-            disabled={!editando}
-            value={email}
+          />
+
+          <S.TextoContato
+            disabled={!estaEditando}
+            value={emailEdit}
             onChange={(e) => setEmail(e.target.value)}
-          >
-            {email}
-          </p>
-          <p
-            disabled={!editando}
-            value={telefone}
+          />
+
+          <S.TextoContato
+            disabled={!estaEditando}
+            value={telefoneEdit}
             onChange={(e) => setTelefone(e.target.value)}
-          >
-            {telefone}
-          </p>
-          <p>{login}</p>
+          />
         </S.Info>
+
         <Descricao
-          disabled={!editando}
+          disabled={!estaEditando}
           value={descricao}
           onChange={(e) => setDescricao(e.target.value)}
-        >
-          {descricao}
-        </Descricao>
+        />
       </S.Card>
     </S.CardContainer>
   )

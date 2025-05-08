@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import { BotaoBase } from '../../styles'
-
 export const CardContainer = styled.div`
   max-width: 90%;
   font-family: Roboto, sans-serif;
@@ -11,7 +10,6 @@ export const BotaoFavorito = styled.div`
   color: white;
   width: 40px;
   height: 40px;
-  margin-right: 10px;
   padding: 6px;
   border-radius: 16px;
 
@@ -28,12 +26,14 @@ export const EditandoFavorito = styled.div`
   padding: 8px;
   color: #fff;
   cursor: pointer;
+  margin-bottom: 5px;
 
   p {
     font-weight: bold;
-    font-size: 20px;
+    font-size: 16px;
     margin-right: 8px;
   }
+
   input {
     width: 15px;
     height: 15px;
@@ -54,6 +54,22 @@ export const Titulo = styled.h2`
   font-weight: bold;
   margin-bottom: 8px;
   color: #333;
+`
+
+export const TextoContato = styled.textarea`
+  font-size: clamp(18px, 4vw, 16px);
+  font-family: Roboto, sans-serif;
+  font-weight: bold;
+  resize: none;
+  border: none;
+  background-color: transparent;
+  color: #555;
+  overflow: hidden;
+  margin-right: 10px;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
 `
 
 export const Info = styled.div`
@@ -78,16 +94,59 @@ export const BarraAcoes = styled.div`
   align-items: center;
 `
 
-export const BotaoEditar = styled(BotaoBase)`
-  background-color: #4ca5f8;
+export const BotaoCancelar = styled.div`
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #df6161;
   color: white;
-  width: 40px;
-  height: 40px;
-  margin-right: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 9px;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+
+  &:hover {
+    background-color: #e64343;
+  }
+`
+
+export const BotaoEditarContainer = styled.div`
+  display: flex;
+  gap: 8px;
+  align-items: center;
+`
+
+export const BotaoEditar = styled.div`
+  background-color: #4ca5f8;
+  padding: 6px;
+  border-radius: 13px;
+  cursor: pointer;
 
   img {
-    width: 94%;
+    width: 26px;
+    height: 24px;
   }
+
+  &:hover {
+    background-color: #3998f1;
+  }
+`
+
+export const BotaoSalvar = styled.div`
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #4ca5f8;
+  color: white;
+  padding: 9px;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  margin-inline: 10px;
+  cursor: pointer;
+
   &:hover {
     background-color: #3998f1;
   }
@@ -96,6 +155,7 @@ export const BotaoEditar = styled(BotaoBase)`
 export const BotaoRemover = styled(BotaoBase)`
   background-color: #df6161;
   color: white;
+  border-radius: 13px;
 
   width: 40px;
   height: 40px;

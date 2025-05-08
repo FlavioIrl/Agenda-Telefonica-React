@@ -22,7 +22,7 @@ export const BotaoBase = styled.button`
   cursor: pointer;
 `
 
-export const Descricao = styled.p`
+export const Descricao = styled.input`
   margin-top: 12px;
   font-size: 15px;
   color: #c9c9c9;
