@@ -13,7 +13,7 @@ const Contato = ({ id, login, descricao, email, nome, telefone }: Props) => {
   const dispatch = useDispatch()
 
   const registro = useSelector((state: RootState) =>
-    state.registro?.itens?.find((r) => r.id === id)
+    state.registros?.itens?.find((r) => r.id === id)
   )
 
   const [estaEditando, setEstaEditando] = useState(false)
@@ -37,7 +37,7 @@ const Contato = ({ id, login, descricao, email, nome, telefone }: Props) => {
       setLoginEdit(registro.login)
       setEmailEdit(registro.email)
       setTelefoneEdit(registro.telefone)
-      setDescricao(registro.descricao)
+      setDescricaoEdit(registro.descricao)
     }
   }, [registro])
 
