@@ -1,4 +1,4 @@
 export enum Favorito {
-  SIM = 'Sim',
-  NAO = 'Não'
+  SIM = 'sim',
+  NAO = 'nao'
 }

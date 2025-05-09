@@ -4,13 +4,15 @@ import type { FormEvent } from 'react'
 import { useDispatch } from 'react-redux'
 import { cadastrar } from '../../store/reducers/registros'
 import * as S from './styles'
+import RegistroClass from '../../models/Registro'
+import { Favorito } from '../../utils/enums/Contato'
 
 const RegistroUser = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
   const handleVoltar = () => {
-    navigate(-1) // Volta uma página no histórico
+    navigate(-1)
   }
 
   const [login, setLogin] = useState('')
@@ -22,15 +24,17 @@ const RegistroUser = () => {
   const cadastrarPessoa = (evento: FormEvent) => {
     evento.preventDefault()
 
-    dispatch(
-      cadastrar({
-        nome,
-        login,
-        telefone,
-        email,
-        descricao
-      })
+    const novoContato = new RegistroClass(
+      Date.now(), 
+      nome,
+      login,
+      email,
+      telefone,
+      descricao,
+      Favorito.NAO
     )
+
+    dispatch(cadastrar(novoContato))
     navigate('/paginaPrincipal')
   }
 
@@ -78,6 +82,7 @@ const RegistroUser = () => {
             type="text"
             placeholder="Programador Full Stack"
           />
+
           <S.BotoesContainer>
             <S.BotaoVoltar onClick={handleVoltar}>Voltar</S.BotaoVoltar>
             <S.BotaoSalvar type="submit">Salvar</S.BotaoSalvar>

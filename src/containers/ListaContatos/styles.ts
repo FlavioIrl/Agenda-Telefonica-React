@@ -7,6 +7,32 @@ export const PaginaLista = styled.div`
   flex-direction: column;
   gap: 16px;
 `
+
+export const DivLista = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+`
+
+export const FiltroFavorito = styled.div`
+  font-size: 20px;
+  margin: 16px 0;
+  font-weight: bold;
+  font-family: Roboto, sans-serif;
+
+  label {
+    margin-right: 8px;
+  }
+
+  select {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 4px 8px;
+  }
+`
+
+
 export const Campo = styled.input`
   padding: 8px;
   background-color: #fff;
@@ -14,16 +40,14 @@ export const Campo = styled.input`
   font-weight: bold;
   color: #666666;
   border-color: #666666;
-  margin-left: 30px;
-  width: 88%;
+  margin: 0 auto;
+  width:90%;
 `
 
 export const BotaoLista = styled(BotaoLink)`
   background-color: #61abf0;
   border-radius: 10px;
   margin-bottom: 10px;
-  margin-top: 30px;
-  margin-left: 30px;
   width: 200px;
   padding: 10px;
 

@@ -1,30 +1,31 @@
-import * as enums from '../utils/enums/Contato'
+import { Favorito } from '../utils/enums/Contato';
 
-class Registro {
-  nome: string
-  email: string
-  telefone: string
-  login: string
-  descricao: string
-  id: number
-  status: enums.Favorito
+class RegistroClass {
+  id: number;
+  nome: string;
+  login: string;
+  email: string;
+  telefone: string;
+  descricao: string;
+  status: Favorito;
 
   constructor(
+    id: number,
     nome: string,
+    login: string,
     email: string,
     telefone: string,
-    id: number,
-    login: string,
     descricao: string,
-    status: enums.Favorito
+    status: Favorito
   ) {
-    this.nome = nome
-    this.email = email
-    this.telefone = telefone
-    this.login = login
-    this.descricao = descricao
-    this.id = id
-    this.status = status
+    this.id = id;
+    this.nome = nome;
+    this.login = login;
+    this.email = email;
+    this.telefone = telefone;
+    this.descricao = descricao;
+    this.status = status;
   }
 }
-export default Registro
+
+export default RegistroClass;

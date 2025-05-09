@@ -5,7 +5,6 @@ import RegistroClass from '../../models/Registro'
 
 
 import * as enums from '../../utils/enums/Contato'
-import { alterarFiltro } from '../../store/reducers/filtro'
 
 import * as S from './styles'
 import { Descricao } from '../../styles'
@@ -34,6 +33,7 @@ const Contato = ({
   const [emailEdit, setEmailEdit] = useState(email)
   const [telefoneEdit, setTelefoneEdit] = useState(telefone)
   const [descricaoEdit, setDescricaoEdit] = useState(descricao)
+  const [statusEdit, setStatusEdit] = useState(status)
 
   const [original, setOriginal] = useState({
     nome,
@@ -51,6 +51,7 @@ const Contato = ({
       setEmailEdit(registro.email)
       setTelefoneEdit(registro.telefone)
       setDescricaoEdit(registro.descricao)
+      setStatusEdit(registro.status)
       setOriginal({
         nome: registro.nome,
         status: registro.status,
@@ -87,7 +88,7 @@ const Contato = ({
     dispatch(
       editar({
         id,
-        status,
+        status: statusEdit,
         nome: nomeEdit,
         login: loginEdit,
         email: emailEdit,
@@ -99,12 +100,21 @@ const Contato = ({
   }
 
   function alterarStatusContato(evento: ChangeEvent<HTMLInputElement>) {
-  console.log(evento.target.checked)
-  
-  dispatch(alterarFiltro({
-    valor: evento.target.checked ? enums.Favorito.SIM : enums.Favorito.NAO
-  }));
-}
+    const novoStatus = evento.target.checked ? enums.Favorito.SIM : enums.Favorito.NAO
+    setStatusEdit(novoStatus)
+
+    dispatch(
+      editar({
+        id,
+        nome: nomeEdit,
+        login: loginEdit,
+        email: emailEdit,
+        telefone: telefoneEdit,
+        descricao: descricaoEdit,
+        status: novoStatus
+      })
+    )
+  }
 
   return (
     <S.CardContainer>
@@ -122,7 +132,7 @@ const Contato = ({
                   <p>Favoritar: </p>
                   <input
                     type="checkbox"
-                    checked={registro?.status == enums.Favorito.SIM}
+                    checked={statusEdit === enums.Favorito.SIM}
                     onChange={alterarStatusContato}
                   />
                 </S.EditandoFavorito>
@@ -133,9 +143,11 @@ const Contato = ({
               </>
             ) : (
               <S.BotaoEditarContainer>
-                <S.BotaoFavorito>
-                  <img src="/icons8-estrela.png" />
-                </S.BotaoFavorito>
+                  {registro?.status === enums.Favorito.SIM && (
+                    <S.BotaoFavorito>
+                      <img src="/icons8-estrela.png" />
+                    </S.BotaoFavorito>
+                  )}
                 <S.BotaoEditar onClick={iniciarEdicao}>
                   <img src="/icons8-edit.png" />
                 </S.BotaoEditar>

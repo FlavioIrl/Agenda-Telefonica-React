@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { BotaoBase } from '../../styles'
 
 export const CardContainer = styled.div`
-  max-width: 90%;
+  margin-right: 30px;
   font-family: Roboto, sans-serif;
 `
 
