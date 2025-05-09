@@ -1,3 +1,5 @@
+import * as enums from '../utils/enums/Contato'
+
 class Registro {
   nome: string
   email: string
@@ -5,6 +7,7 @@ class Registro {
   login: string
   descricao: string
   id: number
+  status: enums.Favorito
 
   constructor(
     nome: string,
@@ -12,7 +15,8 @@ class Registro {
     telefone: string,
     id: number,
     login: string,
-    descricao: string
+    descricao: string,
+    status: enums.Favorito
   ) {
     this.nome = nome
     this.email = email
@@ -20,6 +24,7 @@ class Registro {
     this.login = login
     this.descricao = descricao
     this.id = id
+    this.status = status
   }
 }
 export default Registro

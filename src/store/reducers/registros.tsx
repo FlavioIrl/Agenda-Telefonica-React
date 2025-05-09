@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 import Registro from '../../models/Registro'
+import * as enums from '../../utils/enums/Contato'
 
 type RegistroState = {
   itens: Registro[]
@@ -14,7 +15,8 @@ const initialState: RegistroState = {
       nome: 'Flavio Irala',
       telefone: '67999116545',
       login: 'flavioirl',
-      descricao: 'Programador Full Stack'
+      descricao: 'Programador Full Stack',
+      status: enums.Favorito.SIM
     }
   ]
 }

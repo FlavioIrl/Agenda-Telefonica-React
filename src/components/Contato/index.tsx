@@ -1,15 +1,27 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, type ChangeEvent } from 'react'
 import type { RootState } from '../../store'
-import * as S from './styles'
 import RegistroClass from '../../models/Registro'
-import { Descricao } from '../../styles'
 
+
+import * as enums from '../../utils/enums/Contato'
+import { alterarFiltro } from '../../store/reducers/filtro'
+
+import * as S from './styles'
+import { Descricao } from '../../styles'
 import { remover, editar } from '../../store/reducers/registros'
 
 type Props = RegistroClass
 
-const Contato = ({ id, login, descricao, email, nome, telefone }: Props) => {
+const Contato = ({
+  id,
+  login,
+  descricao,
+  status,
+  email,
+  nome,
+  telefone
+}: Props) => {
   const dispatch = useDispatch()
 
   const registro = useSelector((state: RootState) =>
@@ -25,10 +37,11 @@ const Contato = ({ id, login, descricao, email, nome, telefone }: Props) => {
 
   const [original, setOriginal] = useState({
     nome,
+    status,
     login,
     email,
     telefone,
-    descricao,
+    descricao
   })
 
   useEffect(() => {
@@ -38,6 +51,14 @@ const Contato = ({ id, login, descricao, email, nome, telefone }: Props) => {
       setEmailEdit(registro.email)
       setTelefoneEdit(registro.telefone)
       setDescricaoEdit(registro.descricao)
+      setOriginal({
+        nome: registro.nome,
+        status: registro.status,
+        login: registro.login,
+        email: registro.email,
+        telefone: registro.telefone,
+        descricao: registro.descricao
+      })
     }
   }, [registro])
 
@@ -47,7 +68,8 @@ const Contato = ({ id, login, descricao, email, nome, telefone }: Props) => {
       login: loginEdit,
       email: emailEdit,
       telefone: telefoneEdit,
-      descricao: descricaoEdit
+      descricao: descricaoEdit,
+      status: registro?.status || enums.Favorito.NAO
     })
     setEstaEditando(true)
   }
@@ -65,6 +87,7 @@ const Contato = ({ id, login, descricao, email, nome, telefone }: Props) => {
     dispatch(
       editar({
         id,
+        status,
         nome: nomeEdit,
         login: loginEdit,
         email: emailEdit,
@@ -74,6 +97,14 @@ const Contato = ({ id, login, descricao, email, nome, telefone }: Props) => {
     )
     setEstaEditando(false)
   }
+
+  function alterarStatusContato(evento: ChangeEvent<HTMLInputElement>) {
+  console.log(evento.target.checked)
+  
+  dispatch(alterarFiltro({
+    valor: evento.target.checked ? enums.Favorito.SIM : enums.Favorito.NAO
+  }));
+}
 
   return (
     <S.CardContainer>
@@ -89,11 +120,13 @@ const Contato = ({ id, login, descricao, email, nome, telefone }: Props) => {
               <>
                 <S.EditandoFavorito>
                   <p>Favoritar: </p>
-                  <input type="checkbox" />
+                  <input
+                    type="checkbox"
+                    checked={registro?.status == enums.Favorito.SIM}
+                    onChange={alterarStatusContato}
+                  />
                 </S.EditandoFavorito>
-                <S.BotaoSalvar onClick={salvarEdicao}>
-                  Salvar
-                </S.BotaoSalvar>
+                <S.BotaoSalvar onClick={salvarEdicao}>Salvar</S.BotaoSalvar>
                 <S.BotaoCancelar onClick={cancelarEdicao}>
                   Cancelar
                 </S.BotaoCancelar>

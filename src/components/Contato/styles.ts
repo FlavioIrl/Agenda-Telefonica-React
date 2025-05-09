@@ -29,7 +29,6 @@ export const EditandoFavorito = styled.div`
   color: #fff;
   cursor: pointer;
   margin-bottom: 10px;
-  
 
   p {
     font-weight: bold;
