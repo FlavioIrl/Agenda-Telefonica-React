@@ -3,7 +3,6 @@ import { useState, useEffect, type ChangeEvent } from 'react'
 import type { RootState } from '../../store'
 import RegistroClass from '../../models/Registro'
 
-
 import * as enums from '../../utils/enums/Contato'
 
 import * as S from './styles'
@@ -100,7 +99,9 @@ const Contato = ({
   }
 
   function alterarStatusContato(evento: ChangeEvent<HTMLInputElement>) {
-    const novoStatus = evento.target.checked ? enums.Favorito.SIM : enums.Favorito.NAO
+    const novoStatus = evento.target.checked
+      ? enums.Favorito.SIM
+      : enums.Favorito.NAO
     setStatusEdit(novoStatus)
 
     dispatch(
@@ -143,11 +144,11 @@ const Contato = ({
               </>
             ) : (
               <S.BotaoEditarContainer>
-                  {registro?.status === enums.Favorito.SIM && (
-                    <S.BotaoFavorito>
-                      <img src="/icons8-estrela.png" />
-                    </S.BotaoFavorito>
-                  )}
+                {registro?.status === enums.Favorito.SIM && (
+                  <S.BotaoFavorito>
+                    <img src="/icons8-estrela.png" />
+                  </S.BotaoFavorito>
+                )}
                 <S.BotaoEditar onClick={iniciarEdicao}>
                   <img src="/icons8-edit.png" />
                 </S.BotaoEditar>
@@ -164,7 +165,7 @@ const Contato = ({
             value={loginEdit}
             onChange={(e) => setLoginEdit(e.target.value)}
           />
-          <S.TextoContato
+          <S.TextoContatoEmail
             disabled={!estaEditando}
             value={emailEdit}
             onChange={(e) => setEmailEdit(e.target.value)}

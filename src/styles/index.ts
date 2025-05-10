@@ -22,6 +22,22 @@ export const BotaoBase = styled.button`
   cursor: pointer;
 `
 
+export const TextArea = styled.textarea`
+  font-size: clamp(13px, 4vw, 16px);
+  font-family: Roboto, sans-serif;
+  font-weight: bold;
+  height: 42px;
+  border-radius: 8px;
+  margin-top: 5px;
+  margin-bottom: 11px;
+  width: 100%;
+  resize: none;
+  border: none;
+  background-color: #828282;
+  color: #cacaca;
+  overflow: hidden;
+`
+
 export const Descricao = styled.textarea`
   padding: 10px;
   color: #c9c9c9;
@@ -35,7 +51,7 @@ export const Descricao = styled.textarea`
   resize: none;
   border: none;
   background-color: #56616b;
-  margin-top: 30px;
+  margin-top: 8px;
   border-radius: 10px;
   overflow: hidden;
 `

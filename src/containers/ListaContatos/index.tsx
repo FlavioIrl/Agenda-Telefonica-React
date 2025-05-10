@@ -43,7 +43,7 @@ const ListaContatos = () => {
             onChange={(e) => {
               const valorSelecionado = e.target.value as Favorito | 'TODOS'
               dispatch(alterarFiltro(valorSelecionado))
-            }}            
+            }}
           >
             <option value="TODOS">Todos</option>
             <option value="SIM">Favoritos</option>
@@ -51,18 +51,20 @@ const ListaContatos = () => {
           </select>
         </S.FiltroFavorito>
       </S.DivLista>
-      {registrosFiltrados.filter(r => r.id !== 2).map((r) =>(
-        <Contato
-          key={r.id}
-          id={r.id}
-          login={r.login}
-          descricao={r.descricao}
-          email={r.email}
-          nome={r.nome}
-          telefone={r.telefone}
-          status={r.status}
-        />
-      ))}
+      {registrosFiltrados
+        .filter((r) => r.id !== 2)
+        .map((r) => (
+          <Contato
+            key={r.id}
+            id={r.id}
+            login={r.login}
+            descricao={r.descricao}
+            email={r.email}
+            nome={r.nome}
+            telefone={r.telefone}
+            status={r.status}
+          />
+        ))}
     </S.PaginaLista>
   )
 }

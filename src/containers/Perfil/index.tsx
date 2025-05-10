@@ -39,7 +39,8 @@ export const Perfil = () => {
           email,
           telefone,
           login,
-          descricao
+          descricao,
+          status: registro.status
         })
       )
     }

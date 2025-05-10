@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { BotaoBase } from '../../styles'
+import { BotaoBase, TextArea } from '../../styles'
 
 export const CardContainer = styled.div`
   margin-right: 30px;
@@ -10,9 +10,9 @@ export const BotaoFavorito = styled.div`
   background-color: #dcdcdc;
   margin-bottom: 5px;
   color: white;
-  width: 40px;
-  height: 40px;
-  padding: 6px;
+  width: 42px;
+  height: 42px;
+  padding: 4px;
   border-radius: 16px;
 
   img {
@@ -51,36 +51,39 @@ export const Card = styled.div`
   margin-bottom: 20px;
 `
 
-export const Titulo = styled.textarea`
+export const Titulo = styled(TextArea)`
   font-size: 26px;
-  font-weight: bold;
   margin-bottom: 8px;
   color: #333;
-  height: 32px;
-  resize: none;
-  width: 100%;
-  border: none;
-  background-color: transparent;
-  overflow: hidden;
+  background-color: #e0e0e0;
+  height: 36px;
+  padding-left: 12px;
+  margin-right: 20px;
+  
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
+`
+
+export const TextoContatoEmail = styled(TextArea)`
+  font-size: clamp(13px, 4vw, 18px);
+  height: 42px;
+  margin-inline: 10px;
+  margin-top: 5px;
+  margin-bottom: 11px;
+  padding: 8px;
 
   @media (max-width: 768px) {
     font-size: 16px;
   }
 `
 
-export const TextoContato = styled.textarea`
-  font-size: clamp(13px, 4vw, 16px);
-  font-family: Roboto, sans-serif;
-  margin-right: 10px;
-  font-weight: bold;
-  line-height: 13px;
-  width: 20%;
-  height: 20px;
-  resize: none;
-  border: none;
-  background-color: transparent;
-  color: #555;
-  overflow: hidden;
+export const TextoContato = styled(TextArea)`
+  font-size: clamp(13px, 4vw, 18px);
+  height: 42px;
+  margin-top: 5px;
+  margin-bottom: 11px;
+  padding: 8px;
 
   @media (max-width: 768px) {
     font-size: 16px;

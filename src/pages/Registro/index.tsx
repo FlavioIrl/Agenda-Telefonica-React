@@ -25,7 +25,7 @@ const RegistroUser = () => {
     evento.preventDefault()
 
     const novoContato = new RegistroClass(
-      Date.now(), 
+      Date.now(),
       nome,
       login,
       email,

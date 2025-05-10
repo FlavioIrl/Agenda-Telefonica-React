@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { BotaoBase } from '../../styles'
+import { BotaoBase, TextArea } from '../../styles'
 
 export const ContainerPerfil = styled.div`
   position: sticky;
@@ -48,6 +48,10 @@ export const BotaoPerfil = styled(BotaoBase)`
   padding: 5px;
   background-color: #3a3a3a;
 
+  @media (min-width: 768px) and (max-width: 1080px) {
+    margin: 8px auto 0;
+  }
+
   &:hover {
     background-color: rgb(78, 77, 77);
   }
@@ -63,17 +67,12 @@ export const TextoDiv = styled.div`
   background-color: #3a3a3a;
 `
 
-export const TextoPerfil = styled.textarea`
+export const TextoPerfil = styled(TextArea)`
   font-size: clamp(18px, 4vw, 22px);
-  font-family: Roboto, sans-serif;
-  margin-left: 5px;
   font-weight: bold;
-  width: 100%;
-  resize: none;
-  border: none;
-  background-color: transparent;
-  color: #cacaca;
-  overflow: hidden;
+  height: 42px;
+  padding: 8px;
+  margin-bottom: 11px;
 
   @media (max-width: 768px) {
     font-size: 16px;
