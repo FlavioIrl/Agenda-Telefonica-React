@@ -9,18 +9,13 @@ const Home = () => {
         Organize seu trabalho com segurança e simplicidade. Estamos aqui para
         facilitar a sua rotina!
       </Texto>
-      <a>
-        <ImagemLink
-          src="../../public/icons-github.png"
-          alt="Descrição da imagem"
-        />
+      <a href="https://github.com/FlavioIrl" target="_blank" rel="noopener noreferrer">
+        <ImagemLink src="/icons-github.png" alt="GitHub" />
       </a>
-      <a>
-        <ImagemLink
-          src="../../public/icons8-linkedin.png"
-          alt="Descrição da imagem"
-        />
+      <a href="https://linkedin.com/in/flavio-irala-pereira-16ab22b" target="_blank" rel="noopener noreferrer">
+        <ImagemLink src="/icons8-linkedin.png" alt="LinkedIn" />
       </a>
+
     </FundoHome>
   )
 }
