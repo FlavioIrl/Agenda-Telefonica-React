@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { BotaoBase, BotaoLink } from '../../styles'
+import { BotaoBase } from '../../styles'
 
 export const Registro = styled.div`
   display: flex;
@@ -79,7 +79,7 @@ export const BotoesContainer = styled.div`
 export const BotaoVoltar = styled(BotaoBase)`
   background-color: #f12b2b;
 
-  &:hover {
+  &:hover {  
     background-color: #f94a4a;
   }
 `
